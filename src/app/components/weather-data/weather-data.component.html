@@ -1,0 +1,36 @@
+<div class="weather">
+  <div class="d-flex flex-column mb-3">
+    <div class="weather--form">
+      <form #form="ngForm" (submit)="onSubmit()" class="example-form">
+        <mat-form-field class="example-full-width">
+          <mat-label>Search City...</mat-label>
+          <input matInput type="text" name="city" [(ngModel)]="cityName" />
+        </mat-form-field>
+      </form>
+    </div>
+
+    <div class="p-2 weather--upper">
+      <img
+        src="../../../assets/images/hot-bg.jpg"
+        alt="Hot Mountain"
+        *ngIf="14 > 15"
+      />
+      <img
+        src="../../../assets/images/cold-bg.jpg"
+        alt="Cold Mountain"
+        *ngIf="14 <= 15"
+      />
+
+      <div class="weather--upper-data">
+        <div class="location">Manila</div>
+        <div class="country">Philippines</div>
+        <div class="temperature">30&#8451;</div>
+        <div class="line"></div>
+        <div class="situation flex-column">
+          <p>Cloudy</p>
+          <span>25/30&#8451;</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

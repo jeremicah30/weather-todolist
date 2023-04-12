@@ -1,0 +1,13 @@
+@import "../../../variables.scss";
+
+.main {
+  .left {
+    background: $paleblue;
+    height: 100vh;
+  }
+
+  .right {
+    background: $lightgray;
+    height: 100vh;
+  }
+}

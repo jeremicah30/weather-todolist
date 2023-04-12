@@ -1,0 +1,30 @@
+@import "../../../variables.scss";
+
+.date {
+  &--time {
+    &-content {
+      text-align: center;
+      width: fit-content;
+
+      h1 {
+        color: $main-text;
+        font-weight: bold;
+        font-size: 3rem;
+        margin: 0;
+      }
+
+      span {
+        color: $sub-text;
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  &--greetings {
+    padding: 20px 0;
+    font-size: 3rem;
+    font-weight: 600;
+    color: $main-text;
+    line-height: 60px;
+  }
+}

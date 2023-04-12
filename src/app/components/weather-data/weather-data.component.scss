@@ -1,0 +1,71 @@
+.weather {
+  &--form {
+    .example-form {
+      width: 50%;
+      margin: auto;
+    }
+
+    .example-full-width {
+      width: 100%;
+    }
+  }
+
+  &--upper {
+    width: 90%;
+    height: 600px;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 20px;
+    position: relative;
+
+    img {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      object-fit: cover;
+    }
+
+    &-data {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      z-index: 5;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .location {
+        color: #fff;
+        text-align: center;
+        font-size: 4em;
+      }
+
+      .country,
+      p {
+        color: #fff;
+        text-align: center;
+        font-size: 1.5rem;
+      }
+
+      .temperature {
+        color: #fff;
+        text-align: center;
+        font-size: 4em;
+        font-weight: 900;
+      }
+
+      .situation {
+        padding: 20px 0;
+
+        span {
+          color: #fff;
+          text-align: center;
+          font-size: 1.1rem;
+        }
+      }
+    }
+  }
+}
