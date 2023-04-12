@@ -16,11 +16,11 @@ export class DailyComponent implements OnInit {
     this.sharedDataService.getWeatherData().subscribe((weatherData) => {
       this.weatherData = weatherData;
       console.log(weatherData, 'ji');
-      this.someMethod();
+      this.extractDate();
     });
   }
 
-  someMethod(): void {
+  extractDate(): void {
     console.log(this.weatherData, 'nut');
   }
 }
