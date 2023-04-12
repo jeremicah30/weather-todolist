@@ -8,7 +8,6 @@ import { SharedDataService } from 'src/app/services/shared/shared-data.service';
   styleUrls: ['./daily.component.scss'],
 })
 export class DailyComponent implements OnInit {
-  selectedCity: string = 'Manila';
   weatherData?: WeatherData;
 
   constructor(private sharedDataService: SharedDataService) {}
@@ -17,6 +16,11 @@ export class DailyComponent implements OnInit {
     this.sharedDataService.getWeatherData().subscribe((weatherData) => {
       this.weatherData = weatherData;
       console.log(weatherData, 'ji');
+      this.someMethod();
     });
+  }
+
+  someMethod(): void {
+    console.log(this.weatherData, 'nut');
   }
 }

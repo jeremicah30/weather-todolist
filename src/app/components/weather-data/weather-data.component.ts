@@ -23,7 +23,6 @@ export class WeatherDataComponent implements OnInit {
   }
 
   onSubmit() {
-    this.weatherService.getWeatherData(this.cityName);
     this.getWeatherData(this.cityName);
     this.cityName = '';
   }
