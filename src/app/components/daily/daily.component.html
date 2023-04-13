@@ -1,11 +1,48 @@
 <div class="daily">
   <div class="container">
-    <ul class="d-flex">
-      <li *ngFor="let day of weatherData?.forecasts">
-        <mat-card class="daily--card mx-2">
-          <mat-card-content>
-            <img src="../../../assets/images/rain.png" alt="Rain" *ngIf="" />
-            <h1>{{ day.day }}</h1>
+    <ul class="d-flex p-0">
+      <li *ngFor="let day of weatherData?.forecasts?.slice(0, 10)">
+        <mat-card class="daily--card mx-2" *ngIf="isToday(day.date)">
+          <mat-card-content class="daily--card-content">
+            <img
+              src="../../../assets/images/cloudy.png"
+              alt="Cloudy"
+              *ngIf="day.text == 'Cloudy'"
+            />
+            <img
+              src="../../../assets/images/sun-shower.png"
+              alt="Sun Shower"
+              *ngIf="day.text == 'Showers'"
+            />
+            <img
+              src="../../../assets/images/thunder.png"
+              alt="Thunderstorms"
+              *ngIf="day.text == 'Thunderstorms'"
+            />
+            <img
+              src="../../../assets/images/partly-cloudy.png"
+              alt="Partly Cloudy"
+              *ngIf="day.text == 'Partly Cloudy'"
+            />
+            <img
+              src="../../../assets/images/mostly-cloudy.png"
+              alt="Mostly Cloudy"
+              *ngIf="day.text == 'Mostly Cloudy'"
+            />
+            <img
+              src="../../../assets/images/sunny.png"
+              alt="Sunny"
+              *ngIf="day.text == 'Mostly Sunny'"
+            />
+            <img
+              src="../../../assets/images/windy.png"
+              alt="Windy"
+              *ngIf="day.text == 'Windy'"
+            />
+            <span class="day">{{ day.day }}</span>
+            <p class="weather">{{ getDate(day.date) }}</p>
+            <p class="weather">{{ day.text }}</p>
+            <p class="temperature">{{ day.low }} - {{ day.high }}</p>
           </mat-card-content>
         </mat-card>
       </li>

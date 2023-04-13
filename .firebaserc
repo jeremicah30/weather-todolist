@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "noteit-425dc"
+  },
+  "targets": {
+    "noteit-425dc": {
+      "hosting": {
+        "weather-todoList": [
+          "noteit-425dc"
+        ]
+      }
+    }
+  }
+}

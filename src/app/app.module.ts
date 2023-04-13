@@ -15,6 +15,12 @@ import { WeatherDataComponent } from './components/weather-data/weather-data.com
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HomepageComponent } from './components/homepage/homepage.component';
+import { LoginComponent } from './components/auth/login/login.component';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideAuth, getAuth } from '@angular/fire/auth';
+import { provideFirestore, getFirestore } from '@angular/fire/firestore';
+import { AngularFireModule } from '@angular/fire/compat';
 
 @NgModule({
   declarations: [
@@ -26,6 +32,7 @@ import { HomepageComponent } from './components/homepage/homepage.component';
     ProfileComponent,
     WeatherDataComponent,
     HomepageComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,6 +42,10 @@ import { HomepageComponent } from './components/homepage/homepage.component';
     MatInputModule,
     FormsModule,
     HttpClientModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAuth(() => getAuth()),
+    provideFirestore(() => getFirestore()),
+    AngularFireModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

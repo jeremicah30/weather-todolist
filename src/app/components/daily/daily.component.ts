@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { WeatherData } from 'src/app/models/weather.models';
 import { SharedDataService } from 'src/app/services/shared/shared-data.service';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-daily',
@@ -9,6 +10,7 @@ import { SharedDataService } from 'src/app/services/shared/shared-data.service';
 })
 export class DailyComponent implements OnInit {
   weatherData?: WeatherData;
+  currentDate = moment();
 
   constructor(private sharedDataService: SharedDataService) {}
 
@@ -16,11 +18,15 @@ export class DailyComponent implements OnInit {
     this.sharedDataService.getWeatherData().subscribe((weatherData) => {
       this.weatherData = weatherData;
       console.log(weatherData, 'ji');
-      this.extractDate();
     });
   }
 
-  extractDate(): void {
-    console.log(this.weatherData, 'nut');
+  getDate(unixTimestamp: number): string {
+    return moment.unix(unixTimestamp).format('MMMM DD');
+  }
+
+  isToday(date: number): boolean {
+    const momentDate = moment.unix(date);
+    return momentDate.isSame(this.currentDate, 'day');
   }
 }
